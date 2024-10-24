@@ -1,5 +1,5 @@
 {
-  "description": "A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth)",
+  "description": "A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width",
   "license": "MIT",
   "main": "index.js",
   "name": "nwcwidth",
