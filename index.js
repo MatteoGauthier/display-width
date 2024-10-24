@@ -10,7 +10,7 @@ export function wcwidth(uwc) {
   if (Array.from(uwc).length !== 1) {
     throw new Error(`need a single codepoint, got ${uwc}`);
   }
-  return _wcwidth(uwc.codePointAt(0), table, wtable);
+  return _wcwidth(uwc.codePointAt(0));
 }
 
 /** return the width of a string
@@ -64,7 +64,7 @@ export function wcswidth(ustr, n) {
       i++;
       continue;
     }
-    w = isEmojiModifier(wc_last, wc) ? 2 - w : _wcwidth(wc, table, wtable); // Emoji Modifier promotes width to 2
+    w = isEmojiModifier(wc_last, wc) ? 2 - w : _wcwidth(wc); // Emoji Modifier promotes width to 2
     if (w === -1) {
       return -1;
     }
@@ -87,7 +87,7 @@ function isEMBUint32(wc) {
   return isEmojiModifier(wc, 0x1f3fb);
 }
 
-// Identify emoji modifier base per UTS #51 using the _EMBTABLE bitmap
+// Identify emoji modifier base per UTS #51 using the embtable bitmap
 function isEmojiModifier(wcLast, wc) {
   if (wc < 0x1f3fb || wc > 0x1f3ff) {
     return 0;
