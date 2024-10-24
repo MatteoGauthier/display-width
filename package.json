@@ -1,0 +1,11 @@
+{
+  "description": "A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth)",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "nwcwidth",
+  "scripts": {
+    "test": "node --test"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
