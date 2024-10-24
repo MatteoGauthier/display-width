@@ -1,11 +1,11 @@
-# nwcwidth
+# display-width
 
 A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width
 
 ## How to use it
 
 ```js
-import { wcswidth } from "nwcwidth";
+import { wcswidth } from "display-width";
 
 // wcswidth("👩‍❤️‍👨") == 2
 console.log(wcswidth("\u{1F469}\u{200D}\u{2764}\u{FE0F}\u{200D}\u{1F468}"));
