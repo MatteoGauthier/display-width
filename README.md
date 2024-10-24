@@ -1,6 +1,6 @@
 # nwcwidth
 
-A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth)
+A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width
 
 ## How to use it
 
