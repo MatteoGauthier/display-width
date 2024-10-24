@@ -35,6 +35,10 @@ yes!
 
 no!
 
+## Does it have any dependencies?
+
+no!
+
 ## Do you completely understand it?
 
 no! I ported the code and all the tests from
