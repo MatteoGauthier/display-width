@@ -29,7 +29,18 @@ console.log(wcswidth("\u{1F469}\u{200D}\u{2764}\u{FE0F}\u{200D}\u{1F468}"));
 
 ## Is it fast?
 
-yes!
+yes! Compared to [string-width](https://www.npmjs.com/package/string-width), it's about **33x** faster
+
+```
+┌─────────┬─────────────────┬───────────┬────────────────────┬───────────┬─────────┐
+│ (index) │ Task Name       │ ops/sec   │ Average Time (ns)  │ Margin    │ Samples │
+├─────────┼─────────────────┼───────────┼────────────────────┼───────────┼─────────┤
+│ 0       │ 'display-width' │ '188,426' │ 5307.115321339439  │ '±1.55%'  │ 18843   │
+│ 1       │ 'string-width'  │ '5,586'   │ 179008.73345259373 │ '±11.73%' │ 559     │
+└─────────┴─────────────────┴───────────┴────────────────────┴───────────┴─────────┘
+```
+
+see the [bench directory](https://github.com/llimllib/display-width/tree/main/bench) for details
 
 ## Is it large?
 
