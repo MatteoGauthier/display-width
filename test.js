@@ -190,7 +190,6 @@ describe("wcswidth", () => {
   it("works as expected", () => {
     for (const key of Object.keys(tests)) {
       const [val, len, offset] = tests[key];
-      console.log(val);
       equal(
         wcswidth(val, offset),
         len,
