@@ -213,6 +213,14 @@ describe("wcswidth", () => {
     thaiCombiningChar: ["_\u0E34", 1],
     // sindorhesus has this as two for no reason I can tell?
     fancyQuote: ["“", 1],
+    // Mitchell seems to say that this character (🧑‍🌾) shows a place
+    // where wcswidth isn't correct and gives 4 instead of 2; however we return
+    // 2. I don't quite understand what's going on here
+    //
+    // I even wrote a C program to use my systems' wcswidth and it returned 2
+    //
+    // https://mitchellh.com/writing/grapheme-clusters-in-terminals
+    farmer: ["\u{1f9d1}\u200d\u{1f33e}", 2],
   };
 
   it("works as expected", () => {
