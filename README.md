@@ -2,6 +2,8 @@
 
 A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width
 
+That code is a port of POSIX [wcswidth](https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/functions/wcswidth.html), a standard function for counting the number of columns occupied by a string, and is derived from [musl libc](https://github.com/kraj/musl/blob/ffb23aef/src/ctype/wcwidth.c#L11-L29)
+
 ## How to use it
 
 ```js

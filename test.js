@@ -83,8 +83,14 @@ describe("wcswidth", () => {
     exclamation: ["!", 1],
     punctuation: ["a~@!#~Z", 7],
     // non-printables
-    tab: ["Hi\tthere", -1], // wut why
-    esc: ["There is an \x1b", -1], // why
+    //
+    // > The wcswidth() function shall return -1 if any of the first n
+    // wide-character codes in the wide-character string is not a printable
+    // wide-character code.
+    //
+    // https://pubs.opengroup.org/onlinepubs/9699919799.2016edition/functions/wcswidth.html
+    tab: ["Hi\tthere", -1],
+    esc: ["There is an \x1b", -1],
     one: ["\x01", -1],
     zero: ["\x00", 0],
     // accents
@@ -185,6 +191,28 @@ describe("wcswidth", () => {
       "\u{26F9}\u{1F3F4}\u{E0067}\u{E0062}\u{E0073}\u{E0063}\u{E0074}\u{E007F}!",
       4,
     ],
+    // from string-width
+    // sindorhesus has this as two, but I believe one is more correct. How to be sure?
+    heavyCircleWithStrokeAndTwoDots: ["\u25e3", 1],
+    simple: ["abcde", 5],
+    cjk1: ["古池や", 6],
+    cjk2: ["あいうabc", 9],
+    cjk3: ["あいう★", 7],
+    plusminus: ["±", 1],
+    katakana: ["ノード.js", 9],
+    chinese: ["你好", 4],
+    korean: ["안녕하세요", 10],
+    surrogate: ["A\uD83C\uDE00BC", 5],
+    escapes: ["\u001B[31m\u001B[39m", -1],
+    emojiPresentationCharacter: ["\u{231A}", 2],
+    emojiEitherWay: ["\u{2194}\u{FE0F}", 2],
+    emojiModifierBase: ["\u{1F469}", 2],
+    emojiModifierBaseAndModifier: ["\u{1F469}\u{1F3FF}", 2],
+    variationSelectors: ["\u{845B}\u{E0100}", 2],
+    thai: ["ปฏัก", 3],
+    thaiCombiningChar: ["_\u0E34", 1],
+    // sindorhesus has this as two for no reason I can tell?
+    fancyQuote: ["“", 1],
   };
 
   it("works as expected", () => {

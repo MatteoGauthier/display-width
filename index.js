@@ -111,6 +111,8 @@ function isEmojiModifier(wcLast, wc) {
 /**
  * return the width of a single codepoint
  *
+ * derived from musl: https://github.com/kraj/musl/blob/ffb23aef/src/ctype/wcwidth.c#L11-L29
+ *
  * @param {number} uwc
  * @return {number}
  */
