@@ -43,7 +43,7 @@
     "test": "node --test"
   },
   "type": "module",
-  "version": "2.0.0-0",
+  "version": "3.0.0-0",
   "devDependencies": {
     "esbuild": "^0.24.0",
     "typescript": "^5.6.3"
