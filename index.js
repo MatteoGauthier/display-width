@@ -133,11 +133,12 @@ function _wcwidth(wc) {
     return -1;
   }
 
-  if (wc - 0x20000 < 0x20000) {
+  if (wc >= 0x20000 && wc < 0x40000) {
     return 2;
   }
 
-  if (wc === 0xe0001 || wc - 0xe0020 <= 0x5f || wc - 0xe0100 < 0xef) {
+  if (wc === 0xe0001 || (wc >= 0xe0020 && wc <= 0xe007f)
+      || (wc >= 0xe0100 && wc < 0xe01ef)) {
     return 0;
   }
 
