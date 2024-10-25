@@ -1,5 +1,10 @@
 {
+  "author": "Bill Mill <bill@billmill.org>",
   "description": "A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.3"
+  },
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
@@ -35,6 +40,10 @@
   ],
   "license": "MIT",
   "name": "display-width",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llimllib/display-width.git"
+  },
   "scripts": {
     "buildCJS": "esbuild --bundle index.js --outfile=dist/index.cjs --minify --platform=node --format=cjs",
     "buildESM": "esbuild --bundle index.js --outfile=dist/index.mjs --minify --platform=node --format=esm",
@@ -43,9 +52,6 @@
     "test": "node --test"
   },
   "type": "module",
-  "version": "2.0.0",
-  "devDependencies": {
-    "esbuild": "^0.24.0",
-    "typescript": "^5.6.3"
-  }
+  "types": "dist/index.d.ts",
+  "version": "2.0.0"
 }
