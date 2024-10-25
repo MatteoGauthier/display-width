@@ -41,6 +41,22 @@ describe("wcwidth", () => {
     // emoji modifiers
     emFitzpatrickType3: ["\u{1f3fc}", 2],
     emFitzpatrickType5: ["\u{1f3fe}", 2],
+    // CJK ideographs are 20000-3ffff
+    qiang: ["\u{2b017}", 2],
+    // TIP, seal script
+    seal_32477: ["\u{32477}", 2],
+    // unassigned codepoints should default to 1,
+    // likely for forward compatibility
+    unassigned_plane_4: ["\u{40000}", 1],
+    unassigned_plane_d: ["\u{d0000}", 1],
+    unassigned_plane_e: ["\u{e0002}", 1],
+    // musl code insists on doing this even in the tags plane for unassigned:
+    // (should we just default to everything in 0xe0000-0xeffff as invisible?)
+    tag_unassigned: ["\u{e0080}", 1],
+    // but assigned codepoints in the tags code block should be invisible
+    tag_begin: ["\u{e0001}", 0],
+    tag_space: ["\u{e0020}", 0],
+    tag_end: ["\u{e007f}", 0]
   };
 
   it("works as expected", () => {
