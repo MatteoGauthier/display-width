@@ -1,5 +1,14 @@
 {
   "description": "A node.js port of [uwcwidth](https://github.com/Z4JC/uwcwidth), a fast function for determining a string's display width",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/llimllib/display-width",
   "keywords": [
     "string",
@@ -25,11 +34,18 @@
     "string-width"
   ],
   "license": "MIT",
-  "main": "index.js",
   "name": "display-width",
   "scripts": {
+    "buildCJS": "esbuild --bundle index.js --outfile=dist/index.cjs --minify --platform=node --format=cjs",
+    "buildESM": "esbuild --bundle index.js --outfile=dist/index.mjs --minify --platform=node --format=esm",
+    "build": "npm run buildCJS && npm run buildESM",
+    "clean": "rm -rf dist",
     "test": "node --test"
   },
   "type": "module",
-  "version": "1.2.0"
+  "version": "1.2.0",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.3"
+  }
 }
