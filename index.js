@@ -16,8 +16,7 @@ export function wcwidth(uwc) {
 /** return the width of a string
  *
  * @param {string} ustr
- * @param {number} n the length of the string to stop at, specified in code
- *                   points
+ * @param {number} [n] optional length of the string to stop at, specified in code points
  * @return {number}
  */
 export function wcswidth(ustr, n) {
