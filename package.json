@@ -47,7 +47,7 @@
   "scripts": {
     "buildCJS": "esbuild --bundle index.js --outfile=dist/index.cjs --minify --platform=node --format=cjs",
     "buildESM": "esbuild --bundle index.js --outfile=dist/index.mjs --minify --platform=node --format=esm",
-    "build": "npm run buildCJS && npm run buildESM",
+    "build": "tsc && npm run buildCJS && npm run buildESM",
     "clean": "rm -rf dist",
     "test": "node --test"
   },
